@@ -43,6 +43,9 @@ wire mem_to_reg_w;
 wire mem_write_w;
 wire mem_read_w;
 wire [2:0] alu_op_w;
+wire Branch_w;
+wire jal_w;
+wire jalr_w;
 
 /** Program Counter**/
 wire [31:0] pc_plus_4_w;
@@ -91,7 +94,10 @@ CONTROL_UNIT
 	.Reg_Write_o(reg_write_w),
 	.Mem_to_Reg_o(mem_to_reg_w),
 	.Mem_Read_o(mem_read_w),
-	.Mem_Write_o(mem_write_w)
+	.Mem_Write_o(mem_write_w),
+	.Branch_o(Branch_w),
+	.jal_o(jal_w),
+	.jalr_o(jalr_w)
 );
 
 PC_Register
