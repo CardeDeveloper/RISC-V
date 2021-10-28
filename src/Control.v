@@ -26,7 +26,11 @@ module Control
 );
 localparam R_Type				=  7'h33; 
 localparam I_Type_Logic		=  7'h13;
+localparam I_Type_Lw			=  7'h03;
 localparam U_Type 			=	7'h37;
+localparam B_Type   			=	7'h63;
+localparam S_Type   			=	7'h23;
+localparam J_Type   			=	7'h6f;
 
 reg [8:0] control_values;
 
@@ -34,7 +38,12 @@ always@(OP_i) begin
 	case(OP_i)//                          876_54_3_210
 		R_Type:				control_values= 9'b001_00_0_000;
 		I_Type_Logic:		control_values= 9'b001_00_1_001;
+		I_Type_Lw:			control_values= 9'b011_10_1_001;
 		U_Type:				control_values= 9'b001_00_1_010;
+		
+		S_Type:				control_values= 9'b000_01_1_000;
+		//B_Type:				control_values= 11'b00_100_00_0_011;
+		//J_Type:				control_values= 11'b01_101_00_0_100;
 
 		default:
 			control_values= 9'b000_00_000;

@@ -25,9 +25,13 @@ module ALU
 	localparam ADD= 4'b0000;
 	localparam LUI= 4'b0001;
 	localparam LOGIC_OR=  4'b0010;
+	localparam XOR= 4'b0110;
 	localparam SLL= 4'b0011;
-	localparam SUB= 4'b0100;
 	localparam SRL= 4'b0101;
+	localparam SUB= 4'b0100;
+	localparam AND= 4'b1001;
+	localparam BNE= 4'b0111;
+	localparam BLT= 4'b1000;
    
    always @ (A_i or B_i or ALU_Operation_i)
      begin
@@ -44,6 +48,15 @@ module ALU
 					ALU_Result_o=A_i<<B_i;
 			SRL:
 					ALU_Result_o=A_i>>B_i;
+			AND:
+					ALU_Result_o=A_i&B_i;
+			XOR:
+					ALU_Result_o=A_i^B_i;
+			BNE:
+					ALU_Result_o= (A_i != B_i) ? 1'b0 : 1'b1;
+			BLT:
+					ALU_Result_o= (A_i < B_i) ? 1'b0 : 1'b1;
+					
 	
 		default:
 			ALU_Result_o = 0;

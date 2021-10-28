@@ -68,7 +68,13 @@ wire [3:0] alu_operation_w;
 /**Instruction Bus**/	
 wire [31:0] instruction_bus_w;
 
-
+wire [31:0] DataMemory_or_AluResult_w;
+wire [31:0] DataMemory_Result_w;
+wire [31:0] pc_pluss_imm;
+wire ZeroANDBrach_w;
+wire [31:0] next_pc_w;
+wire [31:0] write_data_w;
+wire [31:0] PCplusIMM_OR_PCplus4_w;
 //******************************************************************/
 //******************************************************************/
 //******************************************************************/
@@ -107,6 +113,20 @@ PROGRAM_MEMORY
 	.Instruction_o(instruction_bus_w)
 );
 
+
+Data_Memory
+#(
+	.MEMORY_DEPTH(PROGRAM_MEMORY_DEPTH)
+)
+DataMemory
+(
+	.Write_Data_i(read_data_2_w),
+	.Address_i(alu_result_w),
+	.clk(clk),
+	.Mem_Write_i(mem_write_w),
+	.Mem_Read_i(mem_read_w),
+	.Read_Data_o(DataMemory_Result_w)
+);
 
 Adder_32_Bits
 PC_PLUS_4
@@ -166,6 +186,19 @@ MUX_DATA_OR_IMM_FOR_ALU
 
 );
 
+Multiplexer_2_to_1
+#(
+	.NBits(32)
+)
+MUX_for_WriteData
+(
+	.Selector_i(jal_w),
+	.Mux_Data_0_i(DataMemory_or_AluResult_w),
+	.Mux_Data_1_i(pc_plus_4_w),
+	
+	.Mux_Output_o(write_data_w)
+
+);
 
 ALU_Control
 ALU_CONTROL_UNIT
@@ -188,7 +221,19 @@ ALU_UNIT
 	.ALU_Result_o(alu_result_w)
 );
 
+Multiplexer_2_to_1
+#(
+	.NBits(32)
+)
+MUX_DataMemory_OR_ALUResult
+(
+	.Selector_i(mem_to_reg_w),
+	.Mux_Data_0_i(alu_result_w),
+	.Mux_Data_1_i(DataMemory_Result_w),
+	
+	.Mux_Output_o(DataMemory_or_AluResult_w)
 
+);
 
 
 endmodule
