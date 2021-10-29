@@ -1,5 +1,5 @@
 Analysis & Synthesis report for RISC_V_Single_Cycle
-Thu Oct 28 21:44:54 2021
+Thu Oct 28 22:14:48 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -63,13 +63,15 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  55. Parameter Settings for User Entity Instance: Multiplexer_2_to_1:MUX_rs1plusimm_or_pc
  56. Parameter Settings for User Entity Instance: Multiplexer_2_to_1:MUX_DataMemory_OR_ALUResult
  57. Parameter Settings for User Entity Instance: Multiplexer_2_to_1:MUX_PC_IMM_OR_PC_4
- 58. Port Connectivity Checks: "Multiplexer_2_to_1:MUX_for_WriteData"
- 59. Port Connectivity Checks: "Register_File:REGISTER_FILE_UNIT|Register:Register_zero"
- 60. Port Connectivity Checks: "Adder_32_Bits:PC_PLUS_4"
- 61. Post-Synthesis Netlist Statistics for Top Partition
- 62. Elapsed Time Per Partition
- 63. Analysis & Synthesis Messages
- 64. Analysis & Synthesis Suppressed Messages
+ 58. Port Connectivity Checks: "Multiplexer_2_to_1:MUX_PC_IMM_OR_PC_4"
+ 59. Port Connectivity Checks: "Multiplexer_2_to_1:MUX_DataMemory_OR_ALUResult"
+ 60. Port Connectivity Checks: "Multiplexer_2_to_1:MUX_for_WriteData"
+ 61. Port Connectivity Checks: "Register_File:REGISTER_FILE_UNIT|Register:Register_zero"
+ 62. Port Connectivity Checks: "Adder_32_Bits:PC_PLUS_IMM"
+ 63. Port Connectivity Checks: "Adder_32_Bits:PC_PLUS_4"
+ 64. Post-Synthesis Netlist Statistics for Top Partition
+ 65. Elapsed Time Per Partition
+ 66. Analysis & Synthesis Messages
 
 
 
@@ -96,15 +98,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 28 21:44:54 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 28 22:14:48 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; RISC_V_Single_Cycle                         ;
 ; Top-level Entity Name              ; RISC_V_Single_Cycle                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 2,305                                       ;
-;     Total combinational functions  ; 1,857                                       ;
-;     Dedicated logic registers      ; 552                                         ;
-; Total registers                    ; 552                                         ;
+; Total logic elements               ; 2,303                                       ;
+;     Total combinational functions  ; 1,855                                       ;
+;     Dedicated logic registers      ; 551                                         ;
+; Total registers                    ; 551                                         ;
 ; Total pins                         ; 3                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -249,20 +251,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 2,305     ;
+; Estimated Total logic elements              ; 2,303     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1857      ;
+; Total combinational functions               ; 1855      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 1330      ;
-;     -- 3 input functions                    ; 473       ;
-;     -- <=2 input functions                  ; 54        ;
+;     -- 4 input functions                    ; 1367      ;
+;     -- 3 input functions                    ; 442       ;
+;     -- <=2 input functions                  ; 46        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 1782      ;
-;     -- arithmetic mode                      ; 75        ;
+;     -- normal mode                          ; 1787      ;
+;     -- arithmetic mode                      ; 68        ;
 ;                                             ;           ;
-; Total registers                             ; 552       ;
-;     -- Dedicated logic registers            ; 552       ;
+; Total registers                             ; 551       ;
+;     -- Dedicated logic registers            ; 551       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 3         ;
@@ -270,9 +272,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 552       ;
-; Total fan-out                               ; 8936      ;
-; Average fan-out                             ; 3.70      ;
+; Maximum fan-out                             ; 551       ;
+; Total fan-out                               ; 8958      ;
+; Average fan-out                             ; 3.71      ;
 +---------------------------------------------+-----------+
 
 
@@ -281,24 +283,23 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                          ; Entity Name           ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------+-----------------------+--------------+
-; |RISC_V_Single_Cycle                            ; 1857 (0)            ; 552 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 3    ; 0            ; 0          ; |RISC_V_Single_Cycle                                                                         ; RISC_V_Single_Cycle   ; work         ;
-;    |ALU:ALU_UNIT|                               ; 613 (613)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|ALU:ALU_UNIT                                                            ; ALU                   ; work         ;
-;    |ALU_Control:ALU_CONTROL_UNIT|               ; 16 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|ALU_Control:ALU_CONTROL_UNIT                                            ; ALU_Control           ; work         ;
-;    |ANDGate:ZeroAndBranch_AND|                  ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|ANDGate:ZeroAndBranch_AND                                               ; ANDGate               ; work         ;
+; |RISC_V_Single_Cycle                            ; 1855 (0)            ; 551 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 3    ; 0            ; 0          ; |RISC_V_Single_Cycle                                                                         ; RISC_V_Single_Cycle   ; work         ;
+;    |ALU:ALU_UNIT|                               ; 609 (609)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|ALU:ALU_UNIT                                                            ; ALU                   ; work         ;
+;    |ALU_Control:ALU_CONTROL_UNIT|               ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|ALU_Control:ALU_CONTROL_UNIT                                            ; ALU_Control           ; work         ;
+;    |ANDGate:ZeroAndBranch_AND|                  ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|ANDGate:ZeroAndBranch_AND                                               ; ANDGate               ; work         ;
 ;    |Adder_32_Bits:PC_PLUS_4|                    ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Adder_32_Bits:PC_PLUS_4                                                 ; Adder_32_Bits         ; work         ;
-;    |Adder_32_Bits:PC_PLUS_IMM|                  ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Adder_32_Bits:PC_PLUS_IMM                                               ; Adder_32_Bits         ; work         ;
-;    |Control:CONTROL_UNIT|                       ; 22 (22)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Control:CONTROL_UNIT                                                    ; Control               ; work         ;
-;    |Data_Memory:DataMemory|                     ; 128 (128)           ; 64 (64)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Data_Memory:DataMemory                                                  ; Data_Memory           ; work         ;
-;    |Immediate_Unit:IMM_UNIT|                    ; 45 (45)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Immediate_Unit:IMM_UNIT                                                 ; Immediate_Unit        ; work         ;
-;    |Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU| ; 448 (448)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU                              ; Multiplexer_2_to_1    ; work         ;
+;    |Control:CONTROL_UNIT|                       ; 20 (20)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Control:CONTROL_UNIT                                                    ; Control               ; work         ;
+;    |Data_Memory:DataMemory|                     ; 132 (132)           ; 64 (64)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Data_Memory:DataMemory                                                  ; Data_Memory           ; work         ;
+;    |Immediate_Unit:IMM_UNIT|                    ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Immediate_Unit:IMM_UNIT                                                 ; Immediate_Unit        ; work         ;
+;    |Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU| ; 462 (462)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU                              ; Multiplexer_2_to_1    ; work         ;
 ;    |Multiplexer_2_to_1:MUX_for_WriteData|       ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Multiplexer_2_to_1:MUX_for_WriteData                                    ; Multiplexer_2_to_1    ; work         ;
-;    |Multiplexer_2_to_1:MUX_rs1plusimm_or_pc|    ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Multiplexer_2_to_1:MUX_rs1plusimm_or_pc                                 ; Multiplexer_2_to_1    ; work         ;
-;    |PC_Register:PROGRAM_COUNTER|                ; 7 (7)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|PC_Register:PROGRAM_COUNTER                                             ; PC_Register           ; work         ;
-;    |Program_Memory:PROGRAM_MEMORY|              ; 78 (78)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Program_Memory:PROGRAM_MEMORY                                           ; Program_Memory        ; work         ;
-;    |Register_File:REGISTER_FILE_UNIT|           ; 470 (0)             ; 480 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT                                        ; Register_File         ; work         ;
-;       |Decoder_Register_File:DECODER_REG_FILE|  ; 29 (29)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT|Decoder_Register_File:DECODER_REG_FILE ; Decoder_Register_File ; work         ;
-;       |MUXRegisterFile:MUXRegister1|            ; 427 (427)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT|MUXRegisterFile:MUXRegister1           ; MUXRegisterFile       ; work         ;
-;       |MUXRegisterFile:MUXRegister2|            ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT|MUXRegisterFile:MUXRegister2           ; MUXRegisterFile       ; work         ;
+;    |Multiplexer_2_to_1:MUX_rs1plusimm_or_pc|    ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Multiplexer_2_to_1:MUX_rs1plusimm_or_pc                                 ; Multiplexer_2_to_1    ; work         ;
+;    |PC_Register:PROGRAM_COUNTER|                ; 0 (0)               ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|PC_Register:PROGRAM_COUNTER                                             ; PC_Register           ; work         ;
+;    |Program_Memory:PROGRAM_MEMORY|              ; 84 (84)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Program_Memory:PROGRAM_MEMORY                                           ; Program_Memory        ; work         ;
+;    |Register_File:REGISTER_FILE_UNIT|           ; 496 (0)             ; 480 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT                                        ; Register_File         ; work         ;
+;       |Decoder_Register_File:DECODER_REG_FILE|  ; 31 (31)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT|Decoder_Register_File:DECODER_REG_FILE ; Decoder_Register_File ; work         ;
+;       |MUXRegisterFile:MUXRegister1|            ; 425 (425)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT|MUXRegisterFile:MUXRegister1           ; MUXRegisterFile       ; work         ;
+;       |MUXRegisterFile:MUXRegister2|            ; 40 (40)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT|MUXRegisterFile:MUXRegister2           ; MUXRegisterFile       ; work         ;
 ;       |Register:Register_a0|                    ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT|Register:Register_a0                   ; Register              ; work         ;
 ;       |Register:Register_a1|                    ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT|Register:Register_a1                   ; Register              ; work         ;
 ;       |Register:Register_a2|                    ; 0 (0)               ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT|Register:Register_a2                   ; Register              ; work         ;
@@ -836,8 +837,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Register_File:REGISTER_FILE_UNIT|Register:Register_t6|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable ;
 ; Register_File:REGISTER_FILE_UNIT|Register:Register_a4|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable ;
 ; Register_File:REGISTER_FILE_UNIT|Register:Register_a5|DataOutput[31]      ; Stuck at GND due to stuck port clock_enable ;
-; PC_Register:PROGRAM_COUNTER|PC_Value[8..31]                               ; Lost fanout                                 ;
-; Total Number of Removed Registers = 568                                   ;                                             ;
+; PC_Register:PROGRAM_COUNTER|PC_Value[1,8..31]                             ; Lost fanout                                 ;
+; Total Number of Removed Registers = 569                                   ;                                             ;
 +---------------------------------------------------------------------------+---------------------------------------------+
 
 
@@ -882,12 +883,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 552   ;
+; Total registers                              ; 551   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 6     ;
-; Number of registers using Asynchronous Clear ; 488   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 487   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 482   ;
+; Number of registers using Clock Enable       ; 480   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -897,23 +898,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |RISC_V_Single_Cycle|PC_Register:PROGRAM_COUNTER|PC_Value[0]                             ;
-; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |RISC_V_Single_Cycle|PC_Register:PROGRAM_COUNTER|PC_Value[2]                             ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; Yes        ; |RISC_V_Single_Cycle|PC_Register:PROGRAM_COUNTER|PC_Value[5]                             ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |RISC_V_Single_Cycle|Immediate_Unit:IMM_UNIT|Selector19                                  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |RISC_V_Single_Cycle|Immediate_Unit:IMM_UNIT|Selector9                                   ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |RISC_V_Single_Cycle|Immediate_Unit:IMM_UNIT|Selector5                                   ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT|MUXRegisterFile:MUXRegister1|Mux29 ;
-; 33:1               ; 31 bits   ; 682 LEs       ; 651 LEs              ; 31 LEs                 ; No         ; |RISC_V_Single_Cycle|Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU|Mux_Output_o[8]          ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |RISC_V_Single_Cycle|Immediate_Unit:IMM_UNIT|Selector12                                  ;
-; 21:1               ; 4 bits    ; 56 LEs        ; 24 LEs               ; 32 LEs                 ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux20                                                  ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |RISC_V_Single_Cycle|Immediate_Unit:IMM_UNIT|Selector15                                  ;
-; 22:1               ; 4 bits    ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux24                                                  ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |RISC_V_Single_Cycle|Register_File:REGISTER_FILE_UNIT|MUXRegisterFile:MUXRegister1|Mux31 ;
+; 33:1               ; 11 bits   ; 242 LEs       ; 231 LEs              ; 11 LEs                 ; No         ; |RISC_V_Single_Cycle|Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU|Mux_Output_o[28]         ;
+; 21:1               ; 4 bits    ; 56 LEs        ; 24 LEs               ; 32 LEs                 ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux21                                                  ;
+; 36:1               ; 2 bits    ; 48 LEs        ; 46 LEs               ; 2 LEs                  ; No         ; |RISC_V_Single_Cycle|Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU|Mux_Output_o[9]          ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux25                                                  ;
 ; 23:1               ; 2 bits    ; 30 LEs        ; 14 LEs               ; 16 LEs                 ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux29                                                  ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 24 LEs               ; 20 LEs                 ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux17                                                  ;
-; 17:1               ; 8 bits    ; 88 LEs        ; 48 LEs               ; 40 LEs                 ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux15                                                  ;
+; 38:1               ; 8 bits    ; 200 LEs       ; 192 LEs              ; 8 LEs                  ; No         ; |RISC_V_Single_Cycle|Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU|Mux_Output_o[15]         ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 24 LEs               ; 20 LEs                 ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux18                                                  ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 48 LEs               ; 40 LEs                 ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux13                                                  ;
 ; 18:1               ; 4 bits    ; 48 LEs        ; 28 LEs               ; 20 LEs                 ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux7                                                   ;
+; 41:1               ; 3 bits    ; 81 LEs        ; 75 LEs               ; 6 LEs                  ; No         ; |RISC_V_Single_Cycle|Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU|Mux_Output_o[7]          ;
 ; 19:1               ; 2 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux3                                                   ;
 ; 20:1               ; 2 bits    ; 26 LEs        ; 16 LEs               ; 10 LEs                 ; No         ; |RISC_V_Single_Cycle|ALU:ALU_UNIT|Mux1                                                   ;
+; 43:1               ; 4 bits    ; 112 LEs       ; 100 LEs              ; 12 LEs                 ; No         ; |RISC_V_Single_Cycle|Multiplexer_2_to_1:MUX_DATA_OR_IMM_FOR_ALU|Mux_Output_o[3]          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------+
 
 
@@ -1380,13 +1380,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Multiplexer_2_to_1:MUX_for_WriteData"                                                              ;
-+---------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port                ; Type   ; Severity ; Details                                                                             ;
-+---------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Mux_Output_o[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Multiplexer_2_to_1:MUX_PC_IMM_OR_PC_4"                                                                                                                        ;
++--------------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                                ;
++--------------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Mux_Data_1_i ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "Mux_Data_1_i[31..1]" will be connected to GND. ;
++--------------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Multiplexer_2_to_1:MUX_DataMemory_OR_ALUResult"                                                                                           ;
++--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                           ;
++--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Mux_Output_o ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "Mux_Output_o[31..1]" have no fanouts ;
++--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Multiplexer_2_to_1:MUX_for_WriteData"                                                                                                                                 ;
++---------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                                                                                                ;
++---------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Mux_Data_0_i        ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "Mux_Data_0_i[31..1]" will be connected to GND. ;
+; Mux_Output_o[31..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                    ;
++---------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------+
@@ -1396,6 +1415,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+------------------------------------------------------+
 ; DataInput ; Input ; Info     ; Stuck at GND                                         ;
 +-----------+-------+----------+------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Adder_32_Bits:PC_PLUS_IMM"                                                                                                    ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                     ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+; Result ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "Result[31..1]" have no fanouts ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -1415,22 +1443,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 3                           ;
-; cycloneiii_ff         ; 552                         ;
-;     CLR SLD           ; 6                           ;
-;     ENA CLR           ; 482                         ;
+; cycloneiii_ff         ; 551                         ;
+;     CLR               ; 7                           ;
+;     ENA CLR           ; 480                         ;
 ;     plain             ; 64                          ;
-; cycloneiii_lcell_comb ; 1857                        ;
-;     arith             ; 75                          ;
+; cycloneiii_lcell_comb ; 1855                        ;
+;     arith             ; 68                          ;
 ;         2 data inputs ; 6                           ;
-;         3 data inputs ; 69                          ;
-;     normal            ; 1782                        ;
+;         3 data inputs ; 62                          ;
+;     normal            ; 1787                        ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 47                          ;
-;         3 data inputs ; 404                         ;
-;         4 data inputs ; 1330                        ;
+;         2 data inputs ; 39                          ;
+;         3 data inputs ; 380                         ;
+;         4 data inputs ; 1367                        ;
 ;                       ;                             ;
 ; Max LUT depth         ; 26.00                       ;
-; Average LUT depth     ; 21.69                       ;
+; Average LUT depth     ; 21.83                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1449,7 +1477,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Oct 28 21:44:34 2021
+    Info: Processing started: Thu Oct 28 22:14:28 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RISC_V_Single_Cycle -c RISC_V_Single_Cycle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1485,6 +1513,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file /risc_v
     Info (12023): Found entity 1: Adder_32_Bits File: D:/RISC_V_Single_Cycle/src/Adder_32_Bits.v Line: 13
 Info (12021): Found 1 design units, including 1 entities, in source file /risc_v_single_cycle/src/andgate.v
     Info (12023): Found entity 1: ANDGate File: D:/RISC_V_Single_Cycle/src/ANDGate.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at RISC_V_Single_Cycle.v(154): created implicit net for "pc_plus_imm" File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 154
+Warning (10236): Verilog HDL Implicit Net warning at RISC_V_Single_Cycle.v(212): created implicit net for "DataMemory_or_AluResult_w" File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 212
 Info (12127): Elaborating entity "RISC_V_Single_Cycle" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at RISC_V_Single_Cycle.v(293): truncated value with size 32 to match size of target (1) File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 293
 Info (12128): Elaborating entity "Control" for hierarchy "Control:CONTROL_UNIT" File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 103
@@ -1513,25 +1543,19 @@ Info (276014): Found 3 instances of uninferred RAM logic
     Info (276007): RAM logic "Data_Memory:DataMemory|ram" is uninferred due to asynchronous read logic File: D:/RISC_V_Single_Cycle/src/Data_Memory.v Line: 33
     Info (276013): RAM logic "Register_File:REGISTER_FILE_UNIT|Decoder_Register_File:DECODER_REG_FILE|Ram0" is uninferred because MIF is not supported for the selected family File: D:/RISC_V_Single_Cycle/src/Decoder_Register_File.v Line: 20
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/RISC_V_Single_Cycle/proj_quartus/db/RISC_V_Single_Cycle.ram0_Program_Memory_49bd8618.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 24 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file D:/RISC_V_Single_Cycle/proj_quartus/output_files/RISC_V_Single_Cycle.map.smsg
+Info (17049): 25 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2340 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2338 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 2337 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info (21061): Implemented 2335 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
     Info: Peak virtual memory: 667 megabytes
-    Info: Processing ended: Thu Oct 28 21:44:54 2021
+    Info: Processing ended: Thu Oct 28 22:14:48 2021
     Info: Elapsed time: 00:00:20
     Info: Total CPU time (on all processors): 00:00:34
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in D:/RISC_V_Single_Cycle/proj_quartus/output_files/RISC_V_Single_Cycle.map.smsg.
 
 

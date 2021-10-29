@@ -73,13 +73,13 @@ wire [3:0] alu_operation_w;
 /**Instruction Bus**/	
 wire [31:0] instruction_bus_w;
 
-wire [31:0] DataMemory_or_AluResult_w;
+wire [31:0] Memory_mix_AluResult_w;
 wire [31:0] DataMemory_Result_w;
-wire [31:0] pc_plus_imm;
-wire ZeroANDBrach_w;
+wire [31:0] pc_imm;
+wire ZBrach_w;
 wire [31:0] next_pc_w;
 wire [31:0] write_data_w;
-wire [31:0] PCplusIMM_OR_PC_4_w;
+wire [31:0] PC_IMM_MIX_PC_4_w;
 //******************************************************************/
 //******************************************************************/
 //******************************************************************/
@@ -224,7 +224,7 @@ Multiplexer_2_to_1
 MUX_rs1plusimm_or_pc
 (
 	.Selector_i(jalr_w),
-	.Mux_Data_0_i(PCplusIMM_OR_PC_4_w),
+	.Mux_Data_0_i(PC_IMM_MIX_PC_4_w),
 	.Mux_Data_1_i(alu_result_w),
 	
 	.Mux_Output_o(next_pc_w)
@@ -258,7 +258,7 @@ ZeroAndBranch_AND
 (
 	.A(Branch_w),
 	.B(zero_w),
-	.C(ZeroANDBrach_w)
+	.C(ZBrach_w)
 );
 
 
@@ -282,11 +282,11 @@ Multiplexer_2_to_1
 )
 MUX_PC_IMM_OR_PC_4
 (
-	.Selector_i(ZeroANDBrach_w),
+	.Selector_i(ZBrach_w),
 	.Mux_Data_0_i(pc_plus_4_w),
 	.Mux_Data_1_i(pc_plus_imm),
 	
-	.Mux_Output_o(PCplusIMM_OR_PC_4_w)
+	.Mux_Output_o(PC_IMM_MIX_PC_4_w)
 
 );
 
