@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at RISC_V_Single_Cycle.v(78): object "pc_plus_imm" differs only in case from object "PC_PLUS_IMM" in the same scope File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 78

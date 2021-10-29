@@ -18,6 +18,7 @@ module Immediate_Unit
 	
    output reg [31:0] Immediate_o
 );
+//opcodes
 localparam Type_I= 7'h13;
 localparam Type_U= 7'h37;
 localparam Type_B= 7'h63;
@@ -30,7 +31,7 @@ localparam Type_I_jalr= 7'h67;
 //VALOR_2:;
 
 always@(op_i or Instruction_bus_i) begin
-
+//concat each imm size fr each instruction
 	case(op_i)
 	Type_I:
 		Immediate_o = {{20{Instruction_bus_i[31]}},Instruction_bus_i[31:20]};// I format

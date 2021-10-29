@@ -1,44 +1,12 @@
-# Compile of Adder_32_Bits.v was successful.
-# Compile of ALU.v was successful.
-# Compile of ALU_Control.v was successful.
-# Compile of Control.v was successful.
-# Compile of Data_Memory.v was successful.
-# Compile of Decoder_Register_File.v was successful.
-# Compile of Immediate_Unit.v was successful.
-# Compile of Multiplexer_2_to_1.v was successful.
-# Compile of MUX_Register_File.v was successful.
-# Compile of PC_Register.v was successful.
-# Compile of Program_Memory.v was successful.
-# Compile of Register.v was successful.
-# Compile of Register_File.v was successful.
-# Compile of RISC_V_Single_Cycle.v was successful.
-# Compile of RISC_V_Single_Cycle_TB.v was successful.
-# 15 compiles, 0 failed with no errors.
-# Load canceled
-# Compile of Adder_32_Bits.v was successful.
-# Compile of ALU.v was successful.
-# Compile of ALU_Control.v was successful.
-# Compile of Control.v was successful.
-# Compile of Data_Memory.v was successful.
-# Compile of Decoder_Register_File.v was successful.
-# Compile of Immediate_Unit.v was successful.
-# Compile of Multiplexer_2_to_1.v was successful.
-# Compile of MUX_Register_File.v was successful.
-# Compile of PC_Register.v was successful.
-# Compile of Program_Memory.v was successful.
-# Compile of Register.v was successful.
-# Compile of Register_File.v was successful.
-# Compile of RISC_V_Single_Cycle.v was successful.
-# Compile of RISC_V_Single_Cycle_TB.v was successful.
-# 15 compiles, 0 failed with no errors.
 vsim -gui work.RISC_V_Single_Cycle_TB
 # vsim -gui work.RISC_V_Single_Cycle_TB 
-# Start time: 13:01:42 on Oct 18,2021
+# Start time: 19:42:21 on Oct 28,2021
 # Loading work.RISC_V_Single_Cycle_TB
 # Loading work.RISC_V_Single_Cycle
 # Loading work.Control
 # Loading work.PC_Register
 # Loading work.Program_Memory
+# Loading work.Data_Memory
 # Loading work.Adder_32_Bits
 # Loading work.Register_File
 # Loading work.Decoder_Register_File
@@ -48,33 +16,155 @@ vsim -gui work.RISC_V_Single_Cycle_TB
 # Loading work.Multiplexer_2_to_1
 # Loading work.ALU_Control
 # Loading work.ALU
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'CONTROL_UNIT'.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/CONTROL_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 78
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(78): [TFMPC] - Missing connection for port 'Branch_o'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'ALU_UNIT'.  Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/ALU_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 183
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(183): [TFMPC] - Missing connection for port 'Zero_o'.
-add wave -position end  sim:/RISC_V_Single_Cycle_TB/clk_tb
-add wave -position end  sim:/RISC_V_Single_Cycle_TB/reset_tb
-add wave -position end  sim:/RISC_V_Single_Cycle_TB/DUV/ALU_UNIT/ALU_Operation_i
-add wave -position end  sim:/RISC_V_Single_Cycle_TB/DUV/ALU_UNIT/A_i
-add wave -position end  sim:/RISC_V_Single_Cycle_TB/DUV/ALU_UNIT/B_i
-add wave -position end  sim:/RISC_V_Single_Cycle_TB/DUV/ALU_UNIT/ALU_Result_o
-add wave -position end  sim:/RISC_V_Single_Cycle_TB/DUV/ALU_UNIT/Zero_o
+# ** Error: (vsim-3033) Instantiation of 'ANDGate' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 255
+#         Searched libraries:
+#             D:/RISC_V_Single_Cycle/proj_modelsim/work
+# Error loading design
+# End time: 19:42:21 on Oct 28,2021, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+vsim -gui work.RISC_V_Single_Cycle_TB
+# vsim -gui work.RISC_V_Single_Cycle_TB 
+# Start time: 19:42:43 on Oct 28,2021
+# Loading work.RISC_V_Single_Cycle_TB
+# Loading work.RISC_V_Single_Cycle
+# Loading work.Control
+# Loading work.PC_Register
+# Loading work.Program_Memory
+# Loading work.Data_Memory
+# Loading work.Adder_32_Bits
+# Loading work.Register_File
+# Loading work.Decoder_Register_File
+# Loading work.Register
+# Loading work.MUXRegisterFile
+# Loading work.Immediate_Unit
+# Loading work.Multiplexer_2_to_1
+# Loading work.ALU_Control
+# Loading work.ALU
+# ** Error: (vsim-3033) Instantiation of 'ANDGate' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 255
+#         Searched libraries:
+#             D:/RISC_V_Single_Cycle/proj_modelsim/work
+# Error loading design
+# End time: 19:42:43 on Oct 28,2021, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+restart -f
+# No Design Loaded!
+vsim -gui work.RISC_V_Single_Cycle_TB
+# vsim -gui work.RISC_V_Single_Cycle_TB 
+# Start time: 19:43:56 on Oct 28,2021
+# Loading work.RISC_V_Single_Cycle_TB
+# Loading work.RISC_V_Single_Cycle
+# Loading work.Control
+# Loading work.PC_Register
+# Loading work.Program_Memory
+# Loading work.Data_Memory
+# Loading work.Adder_32_Bits
+# Loading work.Register_File
+# Loading work.Decoder_Register_File
+# Loading work.Register
+# Loading work.MUXRegisterFile
+# Loading work.Immediate_Unit
+# Loading work.Multiplexer_2_to_1
+# Loading work.ALU_Control
+# Loading work.ALU
+# ** Error: (vsim-3033) Instantiation of 'ANDGate' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 255
+#         Searched libraries:
+#             D:/RISC_V_Single_Cycle/proj_modelsim/work
+# Error loading design
+# End time: 19:43:56 on Oct 28,2021, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+# Compile of Adder_32_Bits.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALU_Control.v was successful.
+# Compile of Control.v was successful.
+# Compile of Data_Memory.v was successful.
+# Compile of Decoder_Register_File.v was successful.
+# Compile of Immediate_Unit.v was successful.
+# Compile of Multiplexer_2_to_1.v was successful.
+# Compile of MUX_Register_File.v was successful.
+# Compile of PC_Register.v was successful.
+# Compile of Program_Memory.v was successful.
+# Compile of Register.v was successful.
+# Compile of Register_File.v was successful.
+# Compile of RISC_V_Single_Cycle.v was successful.
+# Compile of RISC_V_Single_Cycle_TB.v was successful.
+# Compile of ANDGate.v was successful.
+# 16 compiles, 0 failed with no errors.
+vsim -gui work.RISC_V_Single_Cycle_TB
+# vsim -gui work.RISC_V_Single_Cycle_TB 
+# Start time: 19:46:50 on Oct 28,2021
+# Loading work.RISC_V_Single_Cycle_TB
+# Loading work.RISC_V_Single_Cycle
+# Loading work.Control
+# Loading work.PC_Register
+# Loading work.Program_Memory
+# Loading work.Data_Memory
+# Loading work.Adder_32_Bits
+# Loading work.Register_File
+# Loading work.Decoder_Register_File
+# Loading work.Register
+# Loading work.MUXRegisterFile
+# Loading work.Immediate_Unit
+# Loading work.Multiplexer_2_to_1
+# Loading work.ALU_Control
+# Loading work.ALU
+# Loading work.ANDGate
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'Result'. The port definition is at: D:/RISC_V_Single_Cycle/src/Adder_32_Bits.v(22).
+#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/PC_PLUS_IMM File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 148
+do D:/RISC_V_Single_Cycle/proj_modelsim/simulacion-sw-lw.do
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'Result'. The port definition is at: D:/RISC_V_Single_Cycle/src/Adder_32_Bits.v(22).
+#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/PC_PLUS_IMM File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 148
 run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'Result'. The port definition is at: D:/RISC_V_Single_Cycle/src/Adder_32_Bits.v(22).
+#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/PC_PLUS_IMM File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 148
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
+add wave -position end sim:/RISC_V_Single_Cycle_TB/DUV/REGISTER_FILE_UNIT/Register_ra/*
+add wave -position end  sim:/RISC_V_Single_Cycle_TB/DUV/PC_PLUS_IMM/Result
+add wave -position 38  sim:/RISC_V_Single_Cycle_TB/DUV/PC_PLUS_IMM/Data0
+add wave -position 39  sim:/RISC_V_Single_Cycle_TB/DUV/PC_PLUS_IMM/Data1
+# Compile of Adder_32_Bits.v was successful.
+# Compile of ALU.v was successful.
+# Compile of ALU_Control.v was successful.
+# Compile of Control.v was successful.
+# Compile of Data_Memory.v was successful.
+# Compile of Decoder_Register_File.v was successful.
+# Compile of Immediate_Unit.v was successful.
+# Compile of Multiplexer_2_to_1.v was successful.
+# Compile of MUX_Register_File.v was successful.
+# Compile of PC_Register.v was successful.
+# Compile of Program_Memory.v was successful.
+# Compile of Register.v was successful.
+# Compile of Register_File.v was successful.
+# Compile of RISC_V_Single_Cycle.v was successful.
+# Compile of RISC_V_Single_Cycle_TB.v was successful.
+# Compile of ANDGate.v was successful.
+# 16 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.RISC_V_Single_Cycle_TB
+# Loading work.RISC_V_Single_Cycle
+# Loading work.Control
+# Loading work.PC_Register
+# Loading work.Program_Memory
+# Loading work.Data_Memory
+# Loading work.Adder_32_Bits
+# Loading work.Register_File
+# Loading work.Decoder_Register_File
+# Loading work.Register
+# Loading work.MUXRegisterFile
+# Loading work.Immediate_Unit
+# Loading work.Multiplexer_2_to_1
+# Loading work.ALU_Control
+# Loading work.ALU
+# Loading work.ANDGate
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'Result'. The port definition is at: D:/RISC_V_Single_Cycle/src/Adder_32_Bits.v(22).
+#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/PC_PLUS_IMM File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 148
 run
 # Compile of Adder_32_Bits.v was successful.
 # Compile of ALU.v was successful.
@@ -91,7 +181,8 @@ run
 # Compile of Register_File.v was successful.
 # Compile of RISC_V_Single_Cycle.v was successful.
 # Compile of RISC_V_Single_Cycle_TB.v was successful.
-# 15 compiles, 0 failed with no errors.
+# Compile of ANDGate.v was successful.
+# 16 compiles, 0 failed with no errors.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # Loading work.RISC_V_Single_Cycle_TB
@@ -99,6 +190,7 @@ restart
 # Loading work.Control
 # Loading work.PC_Register
 # Loading work.Program_Memory
+# Loading work.Data_Memory
 # Loading work.Adder_32_Bits
 # Loading work.Register_File
 # Loading work.Decoder_Register_File
@@ -108,28 +200,10 @@ restart
 # Loading work.Multiplexer_2_to_1
 # Loading work.ALU_Control
 # Loading work.ALU
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'CONTROL_UNIT'.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/CONTROL_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 78
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(78): [TFMPC] - Missing connection for port 'Branch_o'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'ALU_UNIT'.  Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/ALU_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 183
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(183): [TFMPC] - Missing connection for port 'Zero_o'.
+# Loading work.ANDGate
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'Result'. The port definition is at: D:/RISC_V_Single_Cycle/src/Adder_32_Bits.v(22).
+#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/PC_PLUS_IMM File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 148
 run
-run
-run
-add wave -position end sim:/RISC_V_Single_Cycle_TB/DUV/CONTROL_UNIT/*
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'CONTROL_UNIT'.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/CONTROL_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 78
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(78): [TFMPC] - Missing connection for port 'Branch_o'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'ALU_UNIT'.  Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/ALU_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 183
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(183): [TFMPC] - Missing connection for port 'Zero_o'.
-run
-add wave -position end sim:/RISC_V_Single_Cycle_TB/DUV/PROGRAM_MEMORY/*
-add wave -position end sim:/RISC_V_Single_Cycle_TB/DUV/ALU_CONTROL_UNIT/*
-add wave -position end sim:/RISC_V_Single_Cycle_TB/DUV/ALU_UNIT/*
 # Compile of Adder_32_Bits.v was successful.
 # Compile of ALU.v was successful.
 # Compile of ALU_Control.v was successful.
@@ -145,7 +219,8 @@ add wave -position end sim:/RISC_V_Single_Cycle_TB/DUV/ALU_UNIT/*
 # Compile of Register_File.v was successful.
 # Compile of RISC_V_Single_Cycle.v was successful.
 # Compile of RISC_V_Single_Cycle_TB.v was successful.
-# 15 compiles, 0 failed with no errors.
+# Compile of ANDGate.v was successful.
+# 16 compiles, 0 failed with no errors.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # Loading work.RISC_V_Single_Cycle_TB
@@ -153,6 +228,7 @@ restart
 # Loading work.Control
 # Loading work.PC_Register
 # Loading work.Program_Memory
+# Loading work.Data_Memory
 # Loading work.Adder_32_Bits
 # Loading work.Register_File
 # Loading work.Decoder_Register_File
@@ -162,16 +238,8 @@ restart
 # Loading work.Multiplexer_2_to_1
 # Loading work.ALU_Control
 # Loading work.ALU
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'CONTROL_UNIT'.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/CONTROL_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 78
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(78): [TFMPC] - Missing connection for port 'Branch_o'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'ALU_UNIT'.  Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/ALU_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 183
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(183): [TFMPC] - Missing connection for port 'Zero_o'.
+# Loading work.ANDGate
 run
-# ** Warning: (vsim-7) Failed to open readmem file "C:/RISC_V_Single_Cycle/src/text2.dat" in read mode.
-# No such file or directory. (errno = ENOENT)    : D:/RISC_V_Single_Cycle/src/Program_Memory.v(34)
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/PROGRAM_MEMORY
 # Compile of Adder_32_Bits.v was successful.
 # Compile of ALU.v was successful.
 # Compile of ALU_Control.v was successful.
@@ -187,7 +255,8 @@ run
 # Compile of Register_File.v was successful.
 # Compile of RISC_V_Single_Cycle.v was successful.
 # Compile of RISC_V_Single_Cycle_TB.v was successful.
-# 15 compiles, 0 failed with no errors.
+# Compile of ANDGate.v was successful.
+# 16 compiles, 0 failed with no errors.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # Loading work.RISC_V_Single_Cycle_TB
@@ -195,6 +264,7 @@ restart
 # Loading work.Control
 # Loading work.PC_Register
 # Loading work.Program_Memory
+# Loading work.Data_Memory
 # Loading work.Adder_32_Bits
 # Loading work.Register_File
 # Loading work.Decoder_Register_File
@@ -204,16 +274,10 @@ restart
 # Loading work.Multiplexer_2_to_1
 # Loading work.ALU_Control
 # Loading work.ALU
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'CONTROL_UNIT'.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/CONTROL_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 78
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(78): [TFMPC] - Missing connection for port 'Branch_o'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'ALU_UNIT'.  Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/ALU_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 183
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(183): [TFMPC] - Missing connection for port 'Zero_o'.
+# Loading work.ANDGate
 run
-# ** Warning: (vsim-7) Failed to open readmem file "C:/RISC_V_Single_Cycle/src/text2.dat" in read mode.
-# No such file or directory. (errno = ENOENT)    : D:/RISC_V_Single_Cycle/src/Program_Memory.v(34)
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/PROGRAM_MEMORY
+restart
+run
 # Compile of Adder_32_Bits.v was successful.
 # Compile of ALU.v was successful.
 # Compile of ALU_Control.v was successful.
@@ -229,7 +293,8 @@ run
 # Compile of Register_File.v was successful.
 # Compile of RISC_V_Single_Cycle.v was successful.
 # Compile of RISC_V_Single_Cycle_TB.v was successful.
-# 15 compiles, 0 failed with no errors.
+# Compile of ANDGate.v was successful.
+# 16 compiles, 0 failed with no errors.
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # Loading work.RISC_V_Single_Cycle_TB
@@ -237,6 +302,7 @@ restart
 # Loading work.Control
 # Loading work.PC_Register
 # Loading work.Program_Memory
+# Loading work.Data_Memory
 # Loading work.Adder_32_Bits
 # Loading work.Register_File
 # Loading work.Decoder_Register_File
@@ -246,21 +312,7 @@ restart
 # Loading work.Multiplexer_2_to_1
 # Loading work.ALU_Control
 # Loading work.ALU
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'CONTROL_UNIT'.  Expected 8, found 7.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/CONTROL_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 78
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(78): [TFMPC] - Missing connection for port 'Branch_o'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'ALU_UNIT'.  Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /RISC_V_Single_Cycle_TB/DUV/ALU_UNIT File: D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v Line: 183
-# ** Warning: (vsim-3722) D:/RISC_V_Single_Cycle/src/RISC_V_Single_Cycle.v(183): [TFMPC] - Missing connection for port 'Zero_o'.
+# Loading work.ANDGate
 run
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/RISC_V_Single_Cycle/proj_modelsim/wave.do
-run
-run
-run
-run
-run
-run
-run
-run
-# End time: 15:28:44 on Oct 18,2021, Elapsed time: 2:27:02
-# Errors: 0, Warnings: 5
+# End time: 22:04:03 on Oct 28,2021, Elapsed time: 2:17:13
+# Errors: 0, Warnings: 1

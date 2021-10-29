@@ -26,7 +26,8 @@ module RISC_V_Single_Cycle
 (
 	// Inputs
 	input clk,
-	input reset
+	input reset,
+	output out_top
 
 );
 //******************************************************************/
@@ -61,6 +62,7 @@ wire [31:0] inmmediate_data_w;
 
 /**ALU**/
 wire [31:0] alu_result_w;
+wire zero_w;
 
 /**Multiplexer MUX_DATA_OR_IMM_FOR_ALU**/
 wire [31:0] read_data_2_or_imm_w;
@@ -73,11 +75,11 @@ wire [31:0] instruction_bus_w;
 
 wire [31:0] DataMemory_or_AluResult_w;
 wire [31:0] DataMemory_Result_w;
-wire [31:0] pc_pluss_imm;
+wire [31:0] pc_plus_imm;
 wire ZeroANDBrach_w;
 wire [31:0] next_pc_w;
 wire [31:0] write_data_w;
-wire [31:0] PCplusIMM_OR_PCplus4_w;
+wire [31:0] PCplusIMM_OR_PC_4_w;
 //******************************************************************/
 //******************************************************************/
 //******************************************************************/
@@ -105,7 +107,7 @@ PROGRAM_COUNTER
 (
 	.clk(clk),
 	.reset(reset),
-	.Next_PC(pc_plus_4_w),
+	.Next_PC(next_pc_w),
 	.PC_Value(pc_w)
 );
 
@@ -143,6 +145,14 @@ PC_PLUS_4
 	.Result(pc_plus_4_w)
 );
 
+Adder_32_Bits
+PC_PLUS_IMM
+(
+	.Data0(pc_w),
+	.Data1(inmmediate_data_w),
+	
+	.Result(pc_plus_imm)
+);
 
 //******************************************************************/
 //******************************************************************/
@@ -203,6 +213,21 @@ MUX_for_WriteData
 	.Mux_Data_1_i(pc_plus_4_w),
 	
 	.Mux_Output_o(write_data_w)
+	
+
+);
+
+Multiplexer_2_to_1
+#(
+	.NBits(32)
+)
+MUX_rs1plusimm_or_pc
+(
+	.Selector_i(jalr_w),
+	.Mux_Data_0_i(PCplusIMM_OR_PC_4_w),
+	.Mux_Data_1_i(alu_result_w),
+	
+	.Mux_Output_o(next_pc_w)
 
 );
 
@@ -224,8 +249,18 @@ ALU_UNIT
 	.ALU_Operation_i(alu_operation_w),
 	.A_i(read_data_1_w),
 	.B_i(read_data_2_or_imm_w),
-	.ALU_Result_o(alu_result_w)
+	.ALU_Result_o(alu_result_w),
+	.Zero_o(zero_w)
 );
+
+ANDGate
+ZeroAndBranch_AND
+(
+	.A(Branch_w),
+	.B(zero_w),
+	.C(ZeroANDBrach_w)
+);
+
 
 Multiplexer_2_to_1
 #(
@@ -241,6 +276,20 @@ MUX_DataMemory_OR_ALUResult
 
 );
 
+Multiplexer_2_to_1
+#(
+	.NBits(32)
+)
+MUX_PC_IMM_OR_PC_4
+(
+	.Selector_i(ZeroANDBrach_w),
+	.Mux_Data_0_i(pc_plus_4_w),
+	.Mux_Data_1_i(pc_plus_imm),
+	
+	.Mux_Output_o(PCplusIMM_OR_PC_4_w)
 
+);
+
+assign out_top=write_data_w;
 endmodule
 
