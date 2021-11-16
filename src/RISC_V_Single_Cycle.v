@@ -80,6 +80,62 @@ wire ZBrach_w;
 wire [31:0] next_pc_w;
 wire [31:0] write_data_w;
 wire [31:0] PC_IMM_MIX_PC_4_w;
+
+/***************** WIRES para el pipeline **************************/
+//wires para IF/ID
+wire [31:0] ID_instruction_wire;
+wire [31:0] ID_PC_4_wire;
+
+//Wires para ID/EX
+wire EX_RegDst_wire;
+wire EX_BranchNE_wire;
+wire EX_MemReadWire;
+wire EX_BranchEQ_wire;
+wire EX_MemWriteWire;
+wire EX_MemtoRegWire;
+wire [3:0] EX_ALUOp_wire;
+wire EX_ALUSrc_wire;
+wire EX_RegWrite_wire;
+wire EX_jump_wire;
+wire EX_jal_wire;
+wire [31:0] EX_PC_4_wire;
+wire [31:0] EX_ReadData1_wire;
+wire [31:0] EX_ReadData2_wire;
+wire [31:0] EX_InmmediateExtend_wire;
+wire [31:0] EX_instruction_wire;
+
+//wires para EX/MEM
+wire [31:0] MEM_InmmediateExtendAnded_wire;
+wire [31:0] MEM_ALUResult_wire;
+wire [31:0] MEM_ReadData2_wire;
+wire [4:0] MEM_WriteRegister_wire;
+wire [31:0] MEM_MUX_PC_wire;
+wire [31:0] MEM_instruction_wire;
+wire MEM_MemReadWire;
+wire MEM_MemWriteWire;
+wire MEM_MemtoRegWire;
+wire MEM_RegWrite_wire;
+wire MEM_jal_wire;
+
+
+//wires para MEM/WB
+wire [31:0] WB_ramDataWire;
+wire [31:0] WB_ALUResult_wire;
+wire [4:0] WB_WriteRegister_wire;
+wire WB_MemWriteWire;
+wire WB_MemtoRegWire;
+wire WB_RegWrite_wire;
+wire WB_jal_wire;
+wire [31:0] WB_MUX_PC_wire;
+wire [31:0] WB_instruction_wire;
+
+
+
+//******************************************************************/
+//******************************************************************/
+//******************************************************************/
+
+
 //******************************************************************/
 //******************************************************************/
 //******************************************************************/
